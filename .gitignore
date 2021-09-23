@@ -19,7 +19,7 @@
 *.tar.gz
 *.rar
 
-#Carpetas
+#Folders
 out
 .idea
 
