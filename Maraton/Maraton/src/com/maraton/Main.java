@@ -25,8 +25,8 @@ public class Main {
         List<Corredor> corredores = Arrays.asList(corredor1, corredor2, corredor3, corredor4, corredor5,
                 corredor6, corredor7, corredor8, corredor9, corredor10);
 
-        Verificador verif = new Verificador(corredores);
-        verif.setPriority(Thread.MIN_PRIORITY);
+        Verificador verificador = new Verificador(corredores);
+        verificador.setPriority(Thread.MIN_PRIORITY);
 
         System.out.println("Los corredores se preparan");
 
@@ -41,7 +41,7 @@ public class Main {
         corredor9.start();
         corredor10.start();
 
-        verif.start();
+        verificador.start();
     }
 
 }
