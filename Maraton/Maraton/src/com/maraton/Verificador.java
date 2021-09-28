@@ -26,9 +26,15 @@ public class Verificador extends Thread{
         }
         resultados.sort(Comparator.comparingInt(o -> o.lugar));
         System.out.println("\n\t\t\033[33mRESULTADOS DE LA CARRERA");
-        System.out.println("\033[33m# \tAgua \tCorredor \t\tNivel");
+        System.out.println("\033[33m#\tTerminó \tAgua \tCorredor \t\tNivel");
 
-        resultados.forEach(corredor -> System.out.println("\033[33m" + corredor.lugar + "\t\u001B[0m " +corredor.agua + "\t\t[" + corredor.numero +"] "+corredor.getNombre() + "\t\t" + corredor.nivel));
+        resultados.forEach(
+                corredor -> {
+                    if(corredor.lugar == 11)
+                        System.out.println("\033[33m-"+ "\t\u001B[0m  " + corredor.termino +"\t\t " +corredor.agua + "\t\t[" + corredor.numero +"] "+corredor.getNombre() + "\t\t" + corredor.nivel);
+                    else
+                        System.out.println("\033[33m"+  corredor.lugar + "\t\u001B[0m  " + corredor.termino +"\t\t " +corredor.agua + "\t\t[" + corredor.numero +"] "+corredor.getNombre() + "\t\t" + corredor.nivel);
 
+        });
     }
 }
